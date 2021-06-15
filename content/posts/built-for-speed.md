@@ -41,4 +41,8 @@ In order to speed up both compile time and page load time, basically everything 
 
 I've taken a number of steps to try and make Awake as fast and snappy as possible for the end user and I think you'll find it's been handled fairly well. Last I ran one of the posts through Page Speed Insights I got a 99 score for desktop and 89 for mobile. [Give it a try for yourself!](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fawake-template.netlify.com%2Fpost-markup-and-formatting%2F&tab=desktop)
 
+
+
+Teste edição
+
 ![Page speed insights score 99!!](/uploads/page-speed-insights.jpg)
