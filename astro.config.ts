@@ -27,7 +27,7 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
+      // For more themes, visit =
       themes: { light: "min-light", dark: "night-owl" },
       wrap: true,
     },
