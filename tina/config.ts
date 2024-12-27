@@ -39,6 +39,18 @@ export default defineConfig({
             label: "Title",
             isTitle: true,
             required: true,
+          },{
+            name: 'draft',
+            label: 'Draft',
+            type: 'boolean',
+            required: true,
+            description: 'If this is checked the post will not be published',
+          },
+          {
+            name: 'description',
+            label: 'description',
+            type: 'string',                      
+            required: false,
           },
           {
             type: "rich-text",
