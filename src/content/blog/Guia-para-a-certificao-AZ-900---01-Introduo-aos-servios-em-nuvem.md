@@ -2,6 +2,7 @@
 title: Guia para a certificação AZ 900 - 01 Introdução aos serviços em nuvem
 draft: true
 description: Teste
+pubDatetime: 2025-01-14T03:00:00.000Z
 ---
 
 Astro 2.0 has been released with some cool features, breaking changes, DX improvements, better error overlay and so on. AstroPaper takes advantage of those cool features, especially Content Collections API.

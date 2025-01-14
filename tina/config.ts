@@ -53,6 +53,22 @@ export default defineConfig({
             required: false,
           },
           {
+            name: 'pubDatetime',
+            label: 'pubDatetime',
+            type: 'datetime',                      
+            required: false,
+          },
+          {
+            type: 'string',
+            name: 'tags',
+            label: 'Tags',
+            description: 'Tags for this post',
+            list: true,
+            ui: {
+              component: 'tags',
+            },
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
