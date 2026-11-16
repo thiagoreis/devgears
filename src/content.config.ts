@@ -5,13 +5,21 @@ import config from "@/config";
 
 export const BLOG_PATH = "src/content/posts";
 
+// Aceita datas escritas pelo Pages CMS, que podem chegar como texto entre
+// aspas ou como campo vazio, além das datas YAML sem aspas.
+const dateField = z.coerce.date();
+const optionalDateField = z.preprocess(
+  value => (value === "" || value === null ? undefined : value),
+  z.coerce.date().optional()
+);
+
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
   schema: ({ image }) =>
     z.object({
       author: z.string().default(config.site.author),
-      pubDatetime: z.date(),
-      modDatetime: z.date().optional().nullable(),
+      pubDatetime: dateField,
+      modDatetime: optionalDateField,
       title: z.string(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),

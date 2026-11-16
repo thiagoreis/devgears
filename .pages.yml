@@ -1,0 +1,90 @@
+# Configuração do Pages CMS (https://app.pagescms.org).
+# Define o painel de edição do DevGears: posts, página Sobre e imagens.
+
+media:
+  - name: imagens
+    label: Imagens dos posts
+    input: public/images/posts
+    output: /images/posts
+    categories: [image]
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    filename:
+      template: "{fields.title}.md"
+      field: create
+    view:
+      fields: [title, pubDatetime, draft]
+      primary: title
+      sort: [pubDatetime, title]
+      default:
+        sort: pubDatetime
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        description: Resumo de uma ou duas frases. Aparece na listagem, no Google e ao compartilhar.
+        type: text
+        required: true
+      - name: pubDatetime
+        label: Data de publicação
+        description: Uma data futura agenda o post para esse dia.
+        type: date
+        required: true
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ssxxx
+      - name: modDatetime
+        label: Data de atualização
+        description: Preencha só ao revisar um post já publicado.
+        type: date
+        default: ""
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ssxxx
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: featured
+        label: Destaque na página inicial
+        type: boolean
+      - name: draft
+        label: Rascunho
+        description: Enquanto estiver marcado, o post não é publicado.
+        type: boolean
+      - name: body
+        label: Conteúdo
+        type: rich-text
+        options:
+          format: markdown
+          media: imagens
+          switcher: true
+
+  - name: sobre
+    label: Página Sobre
+    type: file
+    path: src/content/pages/about.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: description
+        label: Descrição
+        type: text
+      - name: body
+        label: Conteúdo
+        type: rich-text
+        options:
+          format: markdown
+          media: imagens

@@ -28,7 +28,15 @@ Blog sobre desenvolvimento de software, por Thiago Reis. Construído com [Astro]
 | Textos da interface em português  | `src/i18n/lang/pt-BR.ts`     |
 | Posts                             | `src/content/posts/`         |
 
-## Escrevendo um post
+## Escrevendo um post pelo painel
+
+O repositório está configurado para o [Pages CMS](https://app.pagescms.org). Entre com a conta do GitHub, escolha este repositório e use "Posts" para criar ou editar. Cada vez que você salva, o painel faz um commit e a Vercel publica.
+
+- Marque "Rascunho" para salvar sem publicar.
+- As imagens enviadas pelo painel ficam em `public/images/posts/`.
+- Os campos do painel são definidos em `.pages.yml`.
+
+## Escrevendo um post pelo editor de código
 
 Copie `src/content/posts/modelo-de-post.md`, ajuste o frontmatter e remova `draft: true`. Posts com `draft: true` não entram no build.
 
