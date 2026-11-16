@@ -14,9 +14,8 @@ content:
     type: collection
     path: src/content/posts
     format: yaml-frontmatter
-    filename:
-      template: "{fields.title}.md"
-      field: create
+    # O nome do arquivo é gerado a partir do título ao salvar um post novo.
+    filename: "{title}.md"
     view:
       fields: [title, pubDatetime, draft]
       primary: title
