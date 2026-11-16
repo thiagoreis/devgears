@@ -14,9 +14,8 @@ content:
     type: collection
     path: src/content/posts
     format: yaml-frontmatter
-    filename:
-      template: "{fields.title}.md"
-      field: create
+    # O nome do arquivo é gerado a partir do título ao salvar um post novo.
+    filename: "{title}.md"
     view:
       fields: [title, pubDatetime, draft]
       primary: title
@@ -36,12 +35,12 @@ content:
         required: true
       - name: pubDatetime
         label: Data de publicação
-        description: Uma data futura agenda o post para esse dia.
+        description: Horário de Brasília. Uma data futura agenda o post para esse dia.
         type: date
         required: true
         options:
           time: true
-          format: yyyy-MM-dd'T'HH:mm:ssxxx
+          format: yyyy-MM-dd'T'HH:mm:ss'-03:00'
       - name: modDatetime
         label: Data de atualização
         description: Preencha só ao revisar um post já publicado.
@@ -49,7 +48,7 @@ content:
         default: ""
         options:
           time: true
-          format: yyyy-MM-dd'T'HH:mm:ssxxx
+          format: yyyy-MM-dd'T'HH:mm:ss'-03:00'
       - name: tags
         label: Tags
         type: string
